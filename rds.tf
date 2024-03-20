@@ -7,7 +7,7 @@ resource "aws_db_instance" "stop_run_away" {
   db_name              = "stoprunaway"
   username             = "stoprunaway"
   password             = ""
-  publicly_accessible  = true
+  publicly_accessible  = false
   skip_final_snapshot  = true
   parameter_group_name = aws_db_parameter_group.stop_run_away.name
   vpc_security_group_ids = [ aws_security_group.stop_run_away_db.id ]

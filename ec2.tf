@@ -2,6 +2,7 @@ resource "aws_instance" "stop_run_away" {
   ami           = "ami-09a7535106fbd42d5"
   instance_type = "t2.micro"
   security_groups = [ aws_security_group.stop_run_away.name ]
+  iam_instance_profile = aws_iam_instance_profile.ssm.name
 
   tags = {
     Name = "StopRunAwayApplication"
